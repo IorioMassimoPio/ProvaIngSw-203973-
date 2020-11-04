@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,11 +22,22 @@ public class TestMyListUtil {
 	@BeforeClass
 	public static void prepare() {
 		mylist = new MyListUtil();
+		System.out.println("INIZIO DEI TEST: " + LocalDate.now() +" alle "+ LocalTime.now());
+	}
+	
+	@AfterClass
+	public static void fine() {
+		System.out.println("FINE DEI TEST: " + LocalDate.now() +" alle "+ LocalTime.now());
 	}
 	
 	@Before
 	public void pre_test() {
-		System.out.println("sto per eseguire un test");
+		System.out.println("Sto per eseguire un test");
+	}
+	
+	@After
+	public void post_test() {
+		System.out.println("Ho finito di eseguire un test");
 	}
 	
 	@Test
