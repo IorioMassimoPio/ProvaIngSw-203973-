@@ -5,9 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
 import org.joda.time.LocalTime;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,6 +48,10 @@ public class TestMyListUtil {
     	l.add(5);
     	l.add(1);
 		assertEquals(Arrays.asList(1, 2, 3, 5, 7, 9), mylist.ordina(l, "crescente"));
+		l.add(2);
+		l.add(10);
+		l.add(12);
+		assertEquals(Arrays.asList(1, 2, 2, 3, 5, 7, 9, 10, 12), mylist.ordina(l, "crescente"));
 	}
 	
 	@Test
@@ -62,5 +64,9 @@ public class TestMyListUtil {
     	l.add(5);
     	l.add(21);
 		assertEquals(Arrays.asList(21, 9, 7, 5, 3, 2), mylist.ordina(l, "decrescente"));
+		l.add(15);
+		l.add(11);
+		l.add(6);
+		assertEquals(Arrays.asList(21, 15, 11, 9, 7, 6, 5, 3, 2), mylist.ordina(l, "decrescente"));
 	}
 }
